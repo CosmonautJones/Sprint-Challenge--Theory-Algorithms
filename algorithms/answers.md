@@ -47,7 +47,7 @@ The output increments at a 64 increase as `n` is in a certain range:
     n = {17-36} sum = 192
     n = {37-64} sum = 256
 
-  I believe this algorithm's time complexity is exponential: `O(N²)`
+  I believe this algorithm's time complexity is exponential: `O(sqrt(n))`
 
 ---
 
