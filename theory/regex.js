@@ -28,3 +28,16 @@ rl.on('line', function (line) {
     let matches3 = line.match(regexDate);
     console.log(matches3);
 });
+
+
+//////////////////////////////////////
+/////////// VT-100 Regex /////////////
+//////////////////////////////////////
+
+// Write a regex that captures this Exit command that moves the cursor to line 12, column 45: ESC[12;45f
+
+const regexExit = /ESC[[]\d+;\d+f/g;
+
+// Write a regex that captures this Exit command that changes the font to bold: ESC[1m
+
+const regexBold = /ESC[[]1m/g;

@@ -76,3 +76,33 @@ for (i = 0; i < n; i++)
       for (l = k +1; l < 10 + k; l++)
       sum++;
 ```
+Since the most inner loop, `for (l = k +1; l < 10 + k; l++)` is a constant, meaning it is not in connection to `n`, it does have an affect on the BigO notation. When looking at the remaining for loops, their iterations are all based on the number of `n`, thus meaning their nested loops affect the BigO notation. Since there are 3 nested loops, the BigO notation for this example is: 
+            _**O(n³)**_
+
+---
+f)
+-
+```
+bunnyEars = function (bunnies) { // here bunnies === n
+  if (bunnies === 0) return 0;
+  return 2 + bunnyEars(bunnies-1);
+}
+```
+Even though this is a recursive call within the function, the value of `n` increases by 1, then decrease by 1 once the condition is met. Therefore it makes this algorithm a linear time complexity.
+The BigO is: **`O(n)`**
+
+---
+g)
+-
+```
+search = function (array, arraySize, target) {
+  // here arraySize === n
+  if (arraySize > 0) {
+    if (array[arraySize-1] === target) return true;
+    else return search(array, arraySize-1, target);
+  }
+  return false;
+}
+```
+
+Just the same as `f)` this algorithm calls recursion, but it is only decreasing its value by 1 until the condition is met, therefore making this algorithm's time complexity _**linear**_ : **`O(n)`**
